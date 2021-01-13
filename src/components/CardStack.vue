@@ -1,11 +1,6 @@
 <template>
 
 <div class="container"> 
-
-
-  <p>STACKED CARDS</p>
-
-  <div class="cards">
     <ul>
       <NewCard
       v-for="card in cardList"
@@ -15,10 +10,8 @@
       
     />
   </ul> 
-  </div>           
-  
-    <!-- select= -->
-    <div >
+ 
+ <div >
       <button> <router-link to="/AddCard">ADD A NEW CARD</router-link> </button>
     </div>
 
@@ -53,13 +46,12 @@ export default {
 
 <style scoped>
 
-.cards{
-  display: flex;
-  display: grid;
-  margin: 0;
-  place-items: center;
+
+ .container {
+   align-items: center;
+   justify-content: center; 
   
-}
+ }
 button{
   background-color: #ffae34;
   color: beige;

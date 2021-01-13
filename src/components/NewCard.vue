@@ -53,10 +53,15 @@ export default {
 
 <style >
 
- .container {
-   align-items: center;
-   justify-content: center;
+  /* CSS by GenerateCSS.com */ 
+.container { 
+position: relative; 
+width: 590px; 
+height: 342px; 
+}
+ li{
    
+   list-style-type: none;
  }
 
 .card{
@@ -69,6 +74,12 @@ export default {
   box-sizing: border-box;
   box-shadow: 4px 4px 12px 2px black;
   transition: 0.1s;
+
+    position: absolute; 
+  width: 312px; 
+  height: 215px; 
+  left: 137px; 
+  top: 84px; 
   
  
 }
@@ -85,12 +96,5 @@ inside of it.  */
 .ninja{background:linear-gradient(248.3deg,hsla(0,0%,100%,.15),hsla(0,0%,100%,0)),#222;color:#fff}
 .blank{background:linear-gradient(237.75deg,hsla(0,0%,100%,.24),hsla(0,0%,100%,0)),#d0d0d0}
 
-
-
-
-
-
-
-li {list-style-type: none;}
 
 </style>

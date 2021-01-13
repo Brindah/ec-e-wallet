@@ -36,21 +36,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.card{
-  width: 24rem;
-  height: 14rem;
-  border-radius: 0.6rem;
-  padding: 1rem;
-  box-sizing: border-box;
-  box-shadow: 0 0 0.5rem black;
-  display: grid;
-  gap: 0.5rem;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-rows: 2.8rem;
-  text-shadow: -1px -1px 2px hsla(0, 0%, 100%, 0.4);
-  font-size: 1.2rem;
-  
-}
+
 
 
 

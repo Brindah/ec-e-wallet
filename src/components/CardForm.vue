@@ -1,107 +1,103 @@
 <template>
-  <div class="card-form">
-    <div class="card-form__inner">
-      <div class="card-container">
-     
-    </div>
-   
+<div class="card-form">
+  <div class="card-form__inner">
+    <div class="card-container">
+  </div>
+    <div class="card-input">
+      <label for="cardNumber" class="card-input__label">
+        Card Numbers
+      </label>
+      <input
+        v-model="card.cardnumber"
+        autofocus
+        id="cardNumber"
+        class="card-input__input"
+        autocomplete="off"
+      />
 
-      <div class="card-input">
-        <label for="cardNumber" class="card-input__label">
-          Card Numbers
-        </label>
-        <input
-          v-model="card.cardnumber"
-          autofocus
-          id="cardNumber"
-          class="card-input__input"
-          autocomplete="off"
+  </div>
+  <div class="card-input">
+    <label for="cardName" class="card-input__label">
+      CARDHOLDER NAME
+    </label>
+    <input
+      id="cardName"
+      class="card-input__input"
+      v-model="card.holder"
+      autocomplete="off"
+    />
+  </div>
+
+  <div class="card-form__row">
+  <div class="card-form__col">
+  <div class="card-form__group">
+    <label for="cardMonth" class="card-input__label">
+      VALID THRU
+    </label>
+  <select
+      class="card-input__input -select"
+      id="cardMonth"
+      v-model="card.validMonth"
+    >
+    <option value="" disabled selected>Month</option>
+    <option
+      v-for="n in 12"
+      :value="n < 10 ? '0' + n : n"
+      :key="n"
+      >
+      {{ 10 > n ? "0" + n : n }}
+    </option>
+  </select>
+
+  <select
+    class="card-input__input -select"
+    id="cardYear"
+    v-model="card.validYear"
+    >
+    <option value="" disabled selected>Year</option>
+    <option
+      v-for="(n, $index) in 12"
+      :value="$index + currentYear"
+      :key="n"
+      >
+        {{$index + currentYear}}
+    </option>
+  </select>
+  </div>
+  </div>
+
+  <div class="card-form__col -cvv">
+    <div class="card-input">
+      <label for="cardCvv" class="card-input__label">CVV</label>
+      <input
+
+        class="card-input__input"
+        id="cardCvv"
+        v-model="card.ccvKod"
+        autocomplete="off"
         />
-        
       </div>
-
-      <div class="card-input">
-        <label for="cardName" class="card-input__label">
-          CARDHOLDER NAME
-        </label>
-        <input
-          id="cardName"
-          class="card-input__input"
-          v-model="card.holder"
-          autocomplete="off"
-        />
-      </div>
-
-      <div class="card-form__row">
-        <div class="card-form__col">
-          <div class="card-form__group">
-            <label for="cardMonth" class="card-input__label">
-              VALID THRU
-            </label>
-            <select
-              class="card-input__input -select"
-              id="cardMonth"
-              v-model="card.validMonth"
-            >
-              <option value="" disabled selected>Month</option>
-              <option
-                v-for="n in 12"
-                :value="n < 10 ? '0' + n : n"
-                :key="n"
-              >
-                {{ 10 > n ? "0" + n : n }}
-              </option>
-            </select>
-
-            <select
-              class="card-input__input -select"
-              id="cardYear"
-              v-model="card.validYear"
-            >
-              <option value="" disabled selected>Year</option>
-              <option
-                v-for="(n, $index) in 12"
-                :value="$index + currentYear"
-                :key="n"
-              >
-                {{$index + currentYear}}
-              </option>
-            </select>
-          </div>
-        </div>
-
-        <div class="card-form__col -cvv">
-          <div class="card-input">
-            <label for="cardCvv" class="card-input__label">CVV</label>
-            <input
-          
-              class="card-input__input"
-              id="cardCvv"
-              v-model="card.ccvKod"
-              autocomplete="off"
-            />
-          </div>
-        </div>
-      </div>
-
-      <div class="card-input">
-        <label for="cardName" class="card-input__label">
-          VENDOR
-        </label>
-          <select v-model="card.vendor" class="card-input__input -select" id="vendor" >
-              <option disabled value="">Please select one</option>
-              <option>blockchain</option>
-              <option>bitcoin</option>
-              <option>ninja</option>
-              <option>evil</option>
-          </select>
-          
-      </div>
-      <button @click="submitCard" class="card-form__button">
-        ADD CARD
-      </button>
     </div>
   </div>
+
+  <div class="card-input">
+    <label for="cardName" class="card-input__label">
+      VENDOR
+    </label>
+    <select v-model="card.vendor" class="card-input__input -select" id="vendor" >
+      <option disabled value="">Please select one</option>
+      <option>blockchain</option>
+      <option>bitcoin</option>
+      <option>ninja</option>
+      <option>evil</option>
+    </select>
+
+    </div>
+      <button @click="submitCard" class="card-form__button">
+      ADD CARD
+      </button>
+  </div>
+</div>
 </template>
 
 <script>
@@ -157,13 +153,19 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.card-container {
-  margin: 30px auto 50px auto;
-}
+.container {
+   align-items: center;
+   justify-content: center;
+   margin: 1rem;
+   padding: 1rem;
+   width: 100%;
+   height: 100%;
+   left:50%;
+   
+ }
 
 .card-form {
   max-width: 570px;
-  margin: auto;
   width: 80%;
 
   &__inner {

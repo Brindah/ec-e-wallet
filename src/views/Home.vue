@@ -1,21 +1,16 @@
 <template>
-  <div class="home">
+  <div class="container">
     <h1>E-WALLET</h1>
       <h4>ACTIVE CARD</h4>
       
     <div >
-    <Top />
     <NewCard v-bind:newCardData="catchParamCard"/>
     <CardStack v-on:sendClickevent="catchClickevent"/>
     </div>
-
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-
-import Top from '@/components/Top.vue'
 import NewCard from '@/components/NewCard.vue'
 import CardStack from '@/components/CardStack.vue'
 
@@ -26,7 +21,7 @@ export default {
     catchParamCard:null
   }},
   components: {
-    Top, NewCard, CardStack
+    NewCard, CardStack
   },
   methods:{
     catchClickevent(card){
@@ -37,3 +32,13 @@ export default {
   }
 }
 </script>
+<style >
+
+ .container {
+   margin: 1rem;
+   padding: 1rem;
+   width: 100%;
+   height: 100%;
+   
+ }
+ </style>

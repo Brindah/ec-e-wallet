@@ -7,14 +7,6 @@ Vue.config.productionTip = false
 new Vue({
   data(){return{
       cardList:[],//hur spara korten så dem fiins kvar även efter uppdatering?
-      
-     /*  vendor: [
-        { bitcoin: "./assets/vendor-bitcoin.svg" },
-        { blockchain: "./assets/vendor-blockchain.svg" },//varför kommer inte mina iconer upp i select?kan det bero på svg?
-        { evil: "./assets/vendor-evil.svg" },
-        { ninja: "./assets/vendor-ninja.svg" },
-        
-      ] */
     
       }},
   methods:{
